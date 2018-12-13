@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :nonprofits, only: [:index, :show]
   resources :orders, only: [:index, :show]
   resources :order_items
@@ -8,4 +9,10 @@ Rails.application.routes.draw do
   end
 
   resource :cart, only: [:show]
+
+  devise_for :users
+   root to: "home#index"
+
+   resources :users 
+
 end
