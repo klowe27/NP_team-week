@@ -3,7 +3,7 @@
 <a href="<%= @nonprofit.website %>"><%= @nonprofit.website %></a>
 <p class="class"><%= @nonprofit.info %></p>
 <%= form_for @order_item do |f| %>
-   <%= f.hidden_field :id, value: @nonprofit.id %>
+   <%= f.hidden_field :nonprofit_id, value: @nonprofit.id %>
    <%= f.number_field :amount %>
    <%= f.submit "Add to cart" %>
  <% end %></p>
