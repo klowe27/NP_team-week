@@ -1,10 +1,14 @@
 <h2>Your Cart</h2>
 <% if @order_items.any? %>
   <% @order_items.each do |item| %>
-    <p><%= item.nonprofit.name %> | <%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"} %></p>
-    <p> Amount: <%= number_to_currency item.amount %></p>
+  <div class="type">
+
+    <h4><%= item.nonprofit.name %></h4>
+    <p><%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"} %> |
+     Amount: <%= number_to_currency item.amount %></p>
   <% end %>
-  <p>Your Total: <%= number_to_currency current_order.calculate_total %></p>
+</div>
+  <h3 style="text-align:center; margin-top: 10px;">Your Total: <%= number_to_currency current_order.calculate_total %></h3>
 <% else %>
   <p>Your shopping cart is empty.</p>
 <% end %>

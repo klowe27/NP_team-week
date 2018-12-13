@@ -15,7 +15,7 @@
  */
 
  body {
-   background-color: gray;
+   background-color: 	#F8F8F8;
  }
 
  .container {
@@ -23,6 +23,24 @@
    padding: 50px;
  }
 
- h2 {
-
+.type {
+  background-color: #F8F8F8;
+  text-align: center;
+  padding: 20px;
+  margin-top: 10px;
  }
+
+ .type:hover {
+   background-color: #D3D3D3;
+   text-align: center;
+  }
+
+h1 {
+  text-align: center;
+  background-color:#5F9F9F;
+  color: white;
+  font-weight: 200;
+  padding: 20px;
+  margin: -50px;
+  margin-bottom: 50px;
+}

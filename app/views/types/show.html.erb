@@ -4,10 +4,13 @@
 
 <% if @type.nonprofits.any? %>
   <% @type.nonprofits.each do |nonprofit| %>
-    <p><%= link_to nonprofit.name, type_nonprofit_path(@type, nonprofit) %>
-    </p>
+    <div class="type"
+      <p><%= link_to nonprofit.name, type_nonprofit_path(@type, nonprofit) %>
+      </p>
+    </div>
   <% end %>
   <% else %>
+
   <p>This type is empty</p>
 <% end %>
 
