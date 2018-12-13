@@ -1,0 +1,4 @@
+<% @types.each do |type| %>
+ <p><%= type.name %>
+ <p> <%= link_to "View all Nonprofits", type_path(type) %></p>
+<% end %>

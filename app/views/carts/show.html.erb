@@ -1,0 +1,9 @@
+<% if @order_items.any? %>
+  <% @order_items.each do |item| %>
+    <p><%= item.nonprofit.name %> | <%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"} %></p>
+    <p> Amount: <%= item.amount %> | Total Price: <%= number_to_currency (item.nonprofit.amount) %></p>
+  <% end %>
+  <p>Your Total: <%= number_to_currency current_order.total_price %></p>
+<% else %>
+  <p>Your shopping cart is empty.</p>
+<% end %>

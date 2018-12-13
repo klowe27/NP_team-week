@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :nonprofits, only: [:index, :show]
+  resources :orders, only: [:index, :show]
+  resources :order_items
+
+  resources :types do
+    resources :nonprofits, only: [:index, :show]
+  end
+
+  resource :cart, only: [:show]
 end

@@ -1,0 +1,9 @@
+<a href="/cart">View cart</a>
+
+<% @types.each do |type| %>
+<h3><%= type.name %></h3>
+ <p><% type.nonprofits.each do |nonprofit| %>
+   <%= link_to nonprofit.name, type_nonprofit_path(type, nonprofit) %>
+ </p>
+ <% end %>
+<% end %>

@@ -1,0 +1,14 @@
+
+<a href="/cart">View cart</a>
+<h1><%= @type.name %></h1>
+
+<% if @type.nonprofits.any? %>
+  <% @type.nonprofits.each do |nonprofit| %>
+    <p><%= link_to nonprofit.name, type_nonprofit_path(@type, nonprofit) %>
+    </p>
+  <% end %>
+  <% else %>
+  <p>This type is empty</p>
+<% end %>
+
+<a href="/types">Go Home</a>
