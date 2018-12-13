@@ -75,7 +75,7 @@ GEM
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    i18n (1.1.1)
+    i18n (1.2.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
@@ -220,11 +220,8 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
   coffee-rails (~> 4.2)
-<<<<<<< HEAD
-  faker
-=======
   devise
->>>>>>> master
+  faker
   jbuilder (~> 2.5)
   jquery-rails
   launchy

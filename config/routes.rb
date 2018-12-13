@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   resource :cart, only: [:show]
 
   devise_for :users
-   root to: "home#index"
+   root to: "types#index"
 
-   resources :users 
+   resources :users
 
 end
