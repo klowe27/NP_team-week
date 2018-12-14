@@ -29,3 +29,6 @@ class CartsController < ApplicationController
     redirect_to new_charge_path
   end
 end
+
+# PUBLISHABLE_KEY=pk_test_TYooMQauvdEDq54NiTphI7jx \
+# SECRET_KEY=sk_test_4eC39HqLyjWDarjtT1zdp7dc rails s
