@@ -1,3 +1,19 @@
+<h2>Your Cart</h2>
+<% if @order_items.any? %>
+  <% @order_items.each do |item| %>
+  <div class="type">
+
+    <h4><%= item.nonprofit.name %></h4>
+    <p><%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"} %> |
+     Amount: <%= number_to_currency item.amount %></p>
+  <% end %>
+</div>
+  <h3 style="text-align:center; margin-top: 10px;">Your Total: <%= number_to_currency current_order.calculate_total %></h3>
+<% else %>
+  <p>Your shopping cart is empty.</p>
+<% end %>
+
+
 <%= form_tag charges_path do %>
   <article>
     <% if flash[:error].present? %>
@@ -6,13 +22,13 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: $5.00</span>
+      <span>Amount: <%= number_to_currency current_order.calculate_total %></span>
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
-          data-amount="500"
+          data-amount="<%= number_to_currency current_order.calculate_total_cent %>"
           data-locale="auto"></script>
 <% end %>

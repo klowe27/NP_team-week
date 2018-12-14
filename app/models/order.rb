@@ -7,6 +7,11 @@ class Order < ApplicationRecord
     self.order_items.collect { |item| item.amount }.sum
   end
 
+  def calculate_total_cent
+  self.order_items.collect { |item| item.amount }.sum * 100
+end
+
+
   private
 
   def update_status
