@@ -5,6 +5,11 @@ class OrderItemsController < ApplicationController
     @item = @order.order_items.new(item_params)
     @order.save
     session[:order_id] = @order.id
+    @user = current_user
+
+    if @user == nil
+      redirect_to new_user_session_path and return
+    end
     redirect_to cart_path
   end
 
