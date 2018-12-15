@@ -1,14 +1,21 @@
-<h2>Your Cart</h2>
+<h1>Your Cart</h1>
 <% if @order_items.any? %>
   <% @order_items.each do |item| %>
-  <div class="type">
+  <div class="type" style="margin-top: 15px;">
 
-    <h4><%= item.nonprofit.name %></h4>
-    <p><%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"} %> |
+    <h2><%= link_to item.nonprofit.name, nonprofit_path(item.nonprofit) %></h2>
+    <p><%= link_to "Delete", order_item_path(item), :method => "delete" %> |
      Amount: <%= number_to_currency item.amount %></p>
+   </div>
   <% end %>
-</div>
-  <h3 style="text-align:center; margin-top: 10px;">Your Total: <%= number_to_currency current_order.calculate_total %></h3>
+  <h2 style="text-align:center; margin-top: 10px;">Your Total: <%= number_to_currency current_order.calculate_total %></h2>
+
+  <div class="center">
+    <%= link_to "Keep shopping", types_path, :class => "btn btn-primary" %>
+    <%= link_to "Checkout", types_path, :class => "btn btn-primary" %>
+
+  </div>
+
 <% else %>
   <p>Your shopping cart is empty.</p>
 <% end %>

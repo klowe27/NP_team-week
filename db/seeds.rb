@@ -11,37 +11,33 @@ Nonprofit.destroy_all
 Type.destroy_all
 OrderItem.destroy_all
 
+types = ["Arts & Culture", "Environmental", "Human Rights", "Animals"]
+paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-5.times do |index|
-  Type.create!(name: Faker::Music.genre)
-end
-
-p "Created #{Type.count} types"
-
-3.times do |index|
-  name = Faker::Pokemon.name
-  Nonprofit.create!(name: name, info: Faker::Lorem.paragraphs(2), website: "www.#{name}.com", image: "nonprofit1.jpg", type_id: Type.all[0].id)
+types.each_with_index do |type, index|
+  Type.create!(name: type, image: "icon#{index}.png")
 end
 
 3.times do |index|
   name = Faker::Pokemon.name
-  Nonprofit.create!(name: name, info: Faker::Lorem.paragraphs(2), website: "www.#{name}.com", image: "nonprofit1.jpg", type_id: Type.all[1].id)
+  Nonprofit.create!(name: name, info: paragraph, website: "www.#{name}.com", image: "nonprofit1.jpg", type_id: Type.all[0].id)
 end
 
 3.times do |index|
   name = Faker::Pokemon.name
-  Nonprofit.create!(name: name, info: Faker::Lorem.paragraphs(2), website: "www.#{name}.com", image: "nonprofit1.jpg", type_id: Type.all[2].id)
+  Nonprofit.create!(name: name, info: paragraph, website: "www.#{name}.com", image: "nonprofit1.jpg", type_id: Type.all[1].id)
 end
 
 3.times do |index|
   name = Faker::Pokemon.name
-  Nonprofit.create!(name: name, info: Faker::Lorem.paragraphs(2), website: "www.#{name}.com", image: "nonprofit1.jpg", type_id: Type.all[3].id)
+  Nonprofit.create!(name: name, info: paragraph, website: "www.#{name}.com", image: "nonprofit1.jpg", type_id: Type.all[2].id)
 end
 
 3.times do |index|
   name = Faker::Pokemon.name
-  Nonprofit.create!(name: name, info: Faker::Lorem.paragraphs(2),website: "www.#{name}.com", image: "nonprofit1.jpg", type_id: Type.all[4].id)
+  Nonprofit.create!(name: name, info: paragraph, website: "www.#{name}.com", image: "nonprofit1.jpg", type_id: Type.all[3].id)
 end
+
 
 p "Created #{Nonprofit.count} nonprofits"
 p "Created #{Type.count} types"

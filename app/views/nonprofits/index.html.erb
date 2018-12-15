@@ -1,9 +1,14 @@
-<a href="/cart">View cart</a>
-
+<h1>All Nonprofits</h1>
 <% @types.each do |type| %>
-<h3><%= type.name %></h3>
- <p><% type.nonprofits.each do |nonprofit| %>
-   <%= link_to nonprofit.name, type_nonprofit_path(type, nonprofit) %>
- </p>
+<h2><%= type.name %></h2>
+<div class="all-nonprofits">
+
+ <% type.nonprofits.each do |nonprofit| %>
+   <div class="type">
+  <%= image_tag ("#{nonprofit.image}"), :class => "nonprofit-image-thumbnail" %>
+   <h2><%= link_to nonprofit.name, type_nonprofit_path(type, nonprofit) %>
+ </h2>
+</div>
  <% end %>
+</div>
 <% end %>

@@ -1,7 +1,14 @@
-<% @types.each do |type| %>
-<div class="type">
-
- <h3><%= type.name %></h3>
- <p> <%= link_to "View all", type_path(type) %></p>
+<div class="hero-group">
+  <%= image_tag ("hero.jpg"), :class => 'hero' %>
+  <h1 class="hero-text1">Jump in</h1>
+  <h1 class="hero-text2">Donate to a charity today</h1>
 </div>
-<% end %>
+
+<div class="all-types">
+  <% @types.each do |type| %>
+  <div class="type">
+    <%= image_tag ("#{type.image}"), :class => 'type-icon'%>
+    <h2> <%= link_to type.name, type_path(type) %></h2>
+  </div>
+  <% end %>
+</div>

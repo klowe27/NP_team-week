@@ -1,9 +1,18 @@
-<%= image_tag ("#{@nonprofit.image}") %>
-<h2><%= @nonprofit.name %></h2>
-<a href="<%= @nonprofit.website %>"><%= @nonprofit.website %></a>
-<p class="class"><%= @nonprofit.info %></p>
-<%= form_for @order_item do |f| %>
-   <%= f.hidden_field :nonprofit_id, value: @nonprofit.id %>
-   <%= f.number_field :amount %>
-   <%= f.submit "Add to cart" %>
- <% end %></p>
+<%= image_tag ("#{@nonprofit.image}"), :class => "nonprofit-hero" %>
+
+<div class="row">
+  <div class="col-md-7">
+    <h1><%= @nonprofit.name %></h1>
+    <a href="<%= @nonprofit.website %>"><%= @nonprofit.website %></a>
+    <p class="class"><%= @nonprofit.info %></p>
+  </div>
+  <div class="col-md-4 donate">
+  <h4>Donate</h4>
+  <p>Enter an amount</p>
+    <%= form_for @order_item do |f| %>
+       <%= f.hidden_field :nonprofit_id, value: @nonprofit.id %>
+       <%= f.number_field :amount, :class => "form-control"%> <br>
+       <%= f.submit "Add to cart", :class => "btn btn-primary add-to-cart" %>
+   </div>
+   <% end %>
+</div>
