@@ -39,11 +39,37 @@ Nonprofit.create!(name: "​​The Sloth Center", info: "We are a tiny, intimate
 
 Nonprofit.create!(name: "​Northwest Animal Companions", info: "Northwest Animal Companions’ purpose is to shelter and care for stray, abandoned, neglected, lost, abused and/or unwanted animals until permanent loving homes can be found for them; to provide these animals with food, veterinary care including spaying or neutering, grooming, medications and all other services necessary to properly maintain them and to facilitate placement into permanent new homes; to shelter and care for lost animals until such time as they can be re-united with their guardians; to care for animals whose guardians are temporarily unable to care for them; as in the event of a major illness, hospitalization or temporary homelessness.", website: "https://nwac-oregon.org/", image: "humane2.jpg", type_id: Type.all[3].id)
 
+Nonprofit.create!(name: "​Portland Nordic", info: "We promote healthy and active lifestyles in greater Portland, Maine through the sport of Nordic skiing.  We are a volunteer run organization which provides ski instruction and supports Nordic trail maintenance and development throughout the city.  We run the majority of our programing, including Bill Koch Youth Ski League, Portland Middle School Nordic Team, and Portland Nordic Night Skis, at the Riverside Golf Course where we assist the City of Portland with grooming and trail maintenance.
 
-3.times do |index|
-  name = Faker::Pokemon.name
-  Nonprofit.create!(name: name, info: paragraph, website: "www.#{name}.com", image: "nonprofit1.jpg", type_id: Type.all[1].id)
-end
+We encourage any one who is interested in Nordic skiing or skis out at Riverside to get involved and become a 'Friend of Portland Nordic'.", website: "https://www.portlandnordic.org/", image: "nordic.jpg", type_id: Type.all[1].id)
+
+
+Nonprofit.create!(name: "​OregonSportsAuthority", info: "The Oregon Sports Authority has served as the state’s sports economic development arm for more than two decades, injecting more than $330 million into Oregon’s economy through sports tourism.  Supported by more than 150 annual members, our non-profit organization works relentlessly to enhance the state’s economy and quality of life by attracting sports events and franchises.  The Oregon Sports Authority was recognized as “Sports Commission of the Year” in 2010 by the National Association of Sports Commissions.
+
+The Oregon Sports Authority’s major achievements include securing the NCAA Basketball Tournament, Davis Cup World Final, multiple U.S. Figure Skating Championships, Women’s World Cup Soccer and the Dew Tour.  View a complete list of Past Events and Future Events.", website: "https://www.oregonsports.org/", image: "sports.jpg", type_id: Type.all[1].id)
+
+Nonprofit.create!(name: "​Special Olympics Oregon", info: "Special Olympics Oregon enriches the lives of thousands of children and adults with intellectual disabilities and their communities in Oregon through sports, education, and athlete health.
+
+The organization serves more than 14,000 participants each year with intellectual disabilities, the largest disability population in the state.  Every day, every month and every year, our programs and services provide our constituents with immense opportunities in life.", website: "http://www.soor.org/", image: "special_olympics.jpg", type_id: Type.all[1].id)
+
+Nonprofit.create!(name: "​Oregon Natural Desert Association", info: "Oregon Natural Desert Association’s conservation program protects the most spectacular places in Oregon’s high desert, including such treasured spots as Steens Mountain, the Oregon Badlands, the John Day River, and the Owyhee Canyonlands. We support the fish and wildlife found within these wild areas, and we guide people in finding new ways to experience this rich natural legacy.
+
+Oregon Natural Desert Association sustains and enhances the health of Oregon’s high desert through stewardship and restoration.
+
+While much of our wild terrain is beautiful and pristine in many ways, human actions over time have negatively impacted some areas. ONDA takes a holistic approach to conservation in Oregon’s high desert, pairing intensive on-the-ground stewardship with efforts to protect large landscapes.
+
+ONDA connects people to the special places we work to improve. We work with hundreds of volunteers, students, seasonal field technicians, and nonprofit partners to get great work done. Our trips provide plenty of natural history education and opportunities for exploration.", website: "https://onda.org/", image: "desert.jpg", type_id: Type.all[1].id)
+
+Nonprofit.create!(name: "​BoothBayYMCA", info: "To strengthen individuals, families, and the community, guided by Christian principles including the universal values of Caring, Honesty, Respect, and Responsibility through programs that will build a healthy spirit, mind, and body for all.
+
+The vision of the Boothbay Region YMCA is to nurture the potential of youth, promote healthy living for all, and foster social responsibility.
+
+The Boothbay Region YMCA was established in 1955 and focuses on youth development, healthy living, and social responsibility.", website: "http://www.boothbayregionymca.org/", image: "ymca.jpg", type_id: Type.all[1].id)
+
+Nonprofit.create!(name: "​PikesPeakYMCA", info: "The Y is a powerful association of men, women and children of all ages, from all walks of life, joined together by a shared passion to strengthen the foundation of our community. We focus our work in three key areas, because nurturing the potential of kids, helping people live healthier, and supporting our neighbors are fundamental to strengthening communities.
+
+The Y is a cause-driven organization that is for youth development, healthy living and social responsibility. The Y is for everyone. Our programs, services and initiatives welcome and embrace newcomers, enable kids to realize their potential, help prepare teens for college, offer ways for families to connect and spend time together, and provide a broader community for seniors to be healthy in mind, body and spirit. And that's just the beginning of how the Y strengthens community.", website: "https://www.ppymca.org/", image: "pikeymca.jpg", type_id: Type.all[1].id)
+
 
 p "Created #{Nonprofit.count} nonprofits"
 p "Created #{Type.count} types"
