@@ -19,11 +19,13 @@
 
         <div class="collapse navbar-collapse float-right">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><%= link_to "Categories", types_path, :class => "nav-link" %></li>
             <li class="nav-item"><%= link_to "All Nonprofits", nonprofits_path, :class => "nav-link" %></li>
-            <li class="nav-item"><%= link_to "Register", new_user_registration_path, :class => "nav-link"%></li>
-            <li class="nav-item"><%= link_to "Sign In", user_session_path, :class => "nav-link"  %></li>
+            <% if current_user %>
+            <li class="nav-item"><%= link_to "Account", user_session_path, :class => "nav-link" %></li>
             <li class="nav-item"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete, :class => "nav-link" %></li>
+            <% else %>
+            <li class="nav-item"><%= link_to "Sign In", user_session_path, :class => "nav-link"  %></li>
+            <% end %>
 
           </ul>
         </div>
