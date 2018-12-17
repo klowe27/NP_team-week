@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'users/show'
   resources :nonprofits, only: [:index, :show]
   resources :orders, only: [:index, :show]
   resources :order_items
@@ -13,7 +14,9 @@ Rails.application.routes.draw do
   devise_for :users
    root to: "types#index"
 
-   resources :users
+   resources :users do
+    
+   end
 
    resources :charges
 
