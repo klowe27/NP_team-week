@@ -118,12 +118,14 @@ a:clicked {
   width: auto;
 }
 
-.notice {
+/* .notice {
   border-radius: 5px;
-  background-color: lightgreen;
-  color: green;
+  background-color: #C5E3BF;
+  border: 1px solid #55AE3A;
+  color: #55AE3A;
   font-weight: bolder;
-}
+  padding: 10px;
+} */
 
 footer {
   background-color: #282828;
