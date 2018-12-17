@@ -12,4 +12,5 @@ class OrdersController < ApplicationController
     @order.user_id = @user.id
     redirect_to cart_path
   end
+
 end

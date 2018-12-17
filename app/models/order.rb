@@ -23,4 +23,5 @@ end
   def update_total
     self.total = calculate_total
   end
+
 end

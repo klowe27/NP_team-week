@@ -2,11 +2,19 @@ class CartsController < ApplicationController
 
   def show
     @order_items = current_order.order_items
+    @order = current_order
+    @order.update(user_id: current_user.id)
+    if @order.user_id === current_user.id
+      flash[:notice] = "Order successfully linked"
+    else
+      flash[:notice] = "Order not successfully linked"
+    end
   end
 
   def new
       @order_items = current_order.order_items
   end
+
 
   def create
   # Amount in cents
