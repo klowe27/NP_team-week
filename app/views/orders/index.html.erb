@@ -16,6 +16,7 @@
       <li>Order Id: <%= link_to order.id, order_path(order.id), class: "order-link" %> </li>
       <p>Total Donation: <%= order.total %></p>
       <p>Order Date: <%= order.created_at %></p>
-    <% end %>
+      <hr>
+      <% end %>
   </ul>
 <% end %>
