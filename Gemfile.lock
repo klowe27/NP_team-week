@@ -270,12 +270,8 @@ DEPENDENCIES
   pivotal_git_scripts
   pry
   puma (~> 3.11)
-<<<<<<< HEAD
   rails (~> 5.2.2)
   receipts
-=======
-  rails
->>>>>>> 96440e725ef2a6223a13e27267d575581e900163
   rspec-rails
   sass-rails (~> 5.0)
   shoulda-matchers
