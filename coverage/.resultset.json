@@ -13,6 +13,7 @@
       ],
       "/Users/khockman/Desktop/Code/NP_team-week/spec/rails_helper.rb": [
         null,
+        null,
         1,
         1,
         1,
@@ -910,8 +911,8 @@
         null,
         1,
         1,
-        1,
-        1,
+        null,
+        null,
         null,
         null,
         1,
@@ -947,8 +948,8 @@
         null,
         1,
         2,
-        2,
-        2,
+        null,
+        null,
         null
       ],
       "/Users/khockman/Desktop/Code/NP_team-week/spec/models/type_spec.rb": [
@@ -970,6 +971,6 @@
         null
       ]
     },
-    "timestamp": 1545149954
+    "timestamp": 1545150475
   }
 }

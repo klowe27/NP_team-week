@@ -6,8 +6,8 @@ FactoryBot.define do
 
   factory(:order) do
     association :order_item
-    before(:create)  { |order| update_status(order) }
-    before(:save) { |order| update_total(order) }
+    # before(:create)  { |order| update_status(order) }
+    # before(:save) { |order| update_total(order) }
   end
 
   factory(:order_item) do
