@@ -20,5 +20,5 @@ class UsersController < ApplicationController
       render :registrations_new
     end
 
-end
+  end
 end

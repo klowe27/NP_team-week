@@ -19,6 +19,8 @@ class OrdersController < ApplicationController
           disposition: :inline
       }
       session.delete(:order_id)
+      # @nonprofit = Nonprofit.find(params[:id])
+      @nonprofits = Nonprofit.all
     end
 
     @order_items = @order.order_items
@@ -33,6 +35,7 @@ class OrdersController < ApplicationController
     # @order.user_id = @user.id
     # redirect_to cart_path
   end
+
 
 
 

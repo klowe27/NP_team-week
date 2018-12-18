@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
   get 'users/show'
   resources :nonprofits, only: [:index, :show]
   #dont know why it requires the default format here.
@@ -18,5 +19,6 @@ Rails.application.routes.draw do
    resources :users
    resources :charges
 
+   resources :admin
 
 end
