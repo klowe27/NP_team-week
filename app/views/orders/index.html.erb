@@ -1,0 +1,21 @@
+<h6>User Account Page</h6>
+
+<h3>Logged in as <strong><%= current_user.email %></strong></h3>
+
+<hr>
+
+<h4>Thank you for your support! <br>
+
+  <% if @orders %>
+
+  <p>You have made the following contributions:</p>
+
+
+  <ul>
+    <% @orders.each do |order| %>
+      <li>Order Id: <%= link_to order.id, order_path(order.id), class: "order-link" %> </li>
+      <p>Total Donation: <%= order.total %></p>
+      <p>Order Date: <%= order.created_at %></p>
+    <% end %>
+  </ul>
+<% end %>

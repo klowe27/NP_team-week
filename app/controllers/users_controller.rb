@@ -19,5 +19,6 @@ class UsersController < ApplicationController
     else
       render :registrations_new
     end
+
 end
 end

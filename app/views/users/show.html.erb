@@ -1,4 +1,19 @@
-<h1>Users#show</h1>
+<h6>User Account Page</h6>
+
+<h3>Logged in as <strong><%= current_user.email %></strong></h3>
+
+<hr>
+
+<h4>Thank you for your support! <br>
+
+  <% if Order.where(user_id: current_user.id) %>
+
+  <p>You have made the following contributions:</p>
 
 
-<p>Find me in app/views/users/show.html.erb</p>
+  <ul>
+    <% @all_user_orders.each do |order| %>
+      <li> <%= Order.ids %> </li>
+    <% end %>
+  </ul>
+<% end %>

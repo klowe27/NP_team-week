@@ -4,6 +4,7 @@ class CartsController < ApplicationController
     @order_items = current_order.order_items
     @order = current_order
     @order.update(user_id: current_user.id)
+  
     if @order.user_id === current_user.id
       flash[:notice] = "Order successfully linked"
     else

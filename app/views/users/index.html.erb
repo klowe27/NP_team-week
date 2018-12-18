@@ -4,4 +4,16 @@
 
 <hr>
 
-<h4>Thank you for your contributions!</h4>
+<h4>Thank you for your support! <br>
+
+  <% if Order.where(user_id: @user.id) %>
+
+  <p>You have made the following contributions:</p>
+
+
+  <ul>
+    <% @all_user_orders.each do |order| %>
+      <li> <%= Order.ids %> </li>
+    <% end %>
+  </ul>
+<% end %>
