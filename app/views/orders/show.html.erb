@@ -1,11 +1,16 @@
 <h6>Order #<%= @order.id %> </h6>
-<p>order placed on: <%= @order.created_at %></p>
+<%= number_to_currency @order.total  %>
+<p>order placed on: <%= @order.created_at.strftime("%Y-%m-%d") %></p>
+<%= @order.card_type %>
+<%= @order.card_last4 %>
+<%= @order.status %>
 <hr>
 <% @order_items.each do |item| %>
   <p>Item id: <%= item.id %></p>
   <% if item.nonprofit %>
     <p>Nonprofit: <%= item.nonprofit.name %></p>
   <% end %>
-  <p>Donation Amount: <%= item.amount %></p>
+  <p>Donation Amount: <%= number_to_currency item.amount %></p>
   <hr>
+  <a href="<%= @order.id %>.pdf">View PDF</a>
 <% end %>

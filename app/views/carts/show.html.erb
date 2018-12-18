@@ -12,29 +12,40 @@
 
   <div class="center">
     <%= link_to "Keep shopping", types_path, :class => "btn btn-primary" %>
-    <%= link_to "Checkout", cart_path, :class => "btn btn-primary" %>
+    <%= form_tag charges_path do %>
+      <article>
+        <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error] %></p>
+          </div>
+        <% end %>
+        <!-- <label class="amount">
+          <span>Amount: <%= number_to_currency current_order.calculate_total %></span>
+        </label> -->
+      </article>
 
-  </div>
+      <script>
+        // Hide default stripe button, be careful there if you
+        // have more than 1 button of that class
+        document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+    </script>
 
-<% else %>
-  <p>Your shopping cart is empty.</p>
-<% end %>
-
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" button_text="Buy Now"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="Payment details"
+              data-amount="<%= number_to_currency current_order.calculate_total_cent %>"
+              data-locale="auto">
+            </script>
+      <script>
+        // Hide default stripe button, be careful there if you
+        // have more than 1 button of that class
+        document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+    </script>
+    <button type="submit" class="btn btn-primary">Pay now</button>
     <% end %>
-    <label class="amount">
-      <span>Amount: <%= number_to_currency current_order.calculate_total %></span>
-    </label>
-  </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="<%= number_to_currency current_order.calculate_total_cent %>"
-          data-locale="auto"></script>
+    </div>
+  <% else %>
+    <p>Your shopping cart is empty.</p>
 <% end %>
+
+<!-- FIX THIS -->

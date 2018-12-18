@@ -4,6 +4,8 @@
    margin: 0;
  }
 
+ .stripe-button-el { display: none }
+
  .container {
    background-color: white;
    padding-left: 50px;
@@ -220,3 +222,5 @@ h4 {
 .order-link{
   color: blue;
 }
+
+.stripe-button-el span { display: none }
