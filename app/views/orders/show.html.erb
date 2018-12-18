@@ -1,0 +1,11 @@
+<h6>Order #<%= @order.id %> </h6>
+<p>order placed on: <%= @order.created_at %></p>
+<hr>
+<% @order_items.each do |item| %>
+  <p>Item id: <%= item.id %></p>
+  <% if item.nonprofit %>
+    <p>Nonprofit: <%= item.nonprofit.name %></p>
+  <% end %>
+  <p>Donation Amount: <%= item.amount %></p>
+  <hr>
+<% end %>
