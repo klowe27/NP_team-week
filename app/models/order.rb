@@ -16,16 +16,16 @@ def receipt
     Receipts::Receipt.new(
       id: id,
       subheading: "RECEIPT FOR ORDER #%{id}",
-      product: "GoRails",
+      product: "Charity Frog",
       company: {
-        name: "One Month, Inc.",
-        address: "37 Great Jones\nFloor 2\nNew York City, NY 10012",
-        email: "teachers@onemonth.com",
+        name: "Charity Frog",
+        address: "400 SW 6th Ave\n#800\nPortland, OR 97204",
+        email: "students@epicodus.com",
       },
       line_items: [
-        ["Date",           created_at.to_s],
-        ["Account Billed", "#{current_user.name}"],
-        ["Product",        "NP"],
+        ["Date",           created_at.strftime("%Y-%m-%d")],
+        ["Account Billed", "#{user.email}"],
+        ["Product",        "CHARITY NAME PLACEHOLDER"],
         ["Amount",         "$#{self.order_items.collect { |item| item.amount }.sum}.00"],
         ["Charged to",     "#{card_type} (**** **** **** #{card_last4})"],
       ],

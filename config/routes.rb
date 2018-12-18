@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   resources :nonprofits, only: [:index, :show]
-  resources :orders, only: [:index, :show]
+  #dont know why it requires the default format here.
+  resources :orders
   resources :order_items
 
   resources :types do
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
    root to: "types#index"
 
    resources :users
-
    resources :charges
+
 
 end
