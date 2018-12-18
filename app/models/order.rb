@@ -11,6 +11,8 @@ class Order < ApplicationRecord
   self.order_items.collect { |item| item.amount }.sum * 100
 end
 
+scope :user_orders, -> { where(user_id: user.id)}
+
 
   private
 
