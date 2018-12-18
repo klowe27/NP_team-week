@@ -1,8 +1,25 @@
-<% @orders.each do |order| %>
-<%= number_to_currency order.total  %>
-<%= order.created_at.strftime("%Y-%m-%d") %>
-<%= order.card_type %>
-<%= order.card_last4 %>
-<%= order.status %>
-<br>
+<h6>User Account Page</h6>
+
+<h3>Logged in as <strong><%= current_user.email %></strong></h3>
+
+<hr>
+
+<h4>Thank you for your support! <br>
+
+  <% if @orders %>
+
+  <p>You have made the following contributions:</p>
+
+
+  <ul>
+    <% @orders.each do |order| %>
+      <li>Order Id: <%= link_to order.id, order_path(order.id), class: "order-link" %> </li>
+      <p>Total Donation: <%= number_to_currency order.total %></p>
+      <p>Order Date: <%= order.created_at.strftime("%Y-%m-%d") %></p>
+      <%= order.card_type %>
+      <%= order.card_last4 %>
+      <%= order.status %>
+      <hr>
+      <% end %>
+  </ul>
 <% end %>

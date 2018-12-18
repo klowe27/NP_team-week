@@ -1,9 +1,10 @@
 class OrdersController < ApplicationController
-
+  before_action :authenticate_user!
 
   def index
     @order = current_order
-    @orders = Order.where("user_id= #{current_user.id}")
+    #doublecheck
+    @orders = Order.where(user_id: current_user.id)
   end
 
   def show
@@ -20,15 +21,17 @@ class OrdersController < ApplicationController
       session.delete(:order_id)
     end
 
+    @order_items = @order.order_items
+
   end
 
   def create
-    @order = current_order
-    session[:order_id] = @order.id
-    session[:user_id] = @user.id
-    @user = current_user
-    @order.user_id = @user.id
-    redirect_to cart_path
+    # @order = current_order
+    # session[:order_id] = @order.id
+    # session[:user_id] = @user.id
+    # @user = current_user
+    # @order.user_id = @user.id
+    # redirect_to cart_path
   end
 
 

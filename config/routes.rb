@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'users/show'
   resources :nonprofits, only: [:index, :show]
   #dont know why it requires the default format here.
   resources :orders

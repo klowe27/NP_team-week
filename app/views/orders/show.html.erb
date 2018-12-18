@@ -1,7 +1,15 @@
-
+<h6>Order #<%= @order.id %> </h6>
 <%= number_to_currency @order.total  %>
-<%= @order.created_at.strftime("%Y-%m-%d") %>
+<p>order placed on: <%= @order.created_at.strftime("%Y-%m-%d") %></p>
 <%= @order.card_type %>
 <%= @order.card_last4 %>
 <%= @order.status %>
-<br>
+<hr>
+<% @order_items.each do |item| %>
+  <p>Item id: <%= item.id %></p>
+  <% if item.nonprofit %>
+    <p>Nonprofit: <%= item.nonprofit.name %></p>
+  <% end %>
+  <p>Donation Amount: <%= number_to_currency item.amount %></p>
+  <hr>
+<% end %>

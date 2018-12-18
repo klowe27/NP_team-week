@@ -32,6 +32,8 @@ def receipt
     )
   end
 
+scope :user_orders, -> { where(user_id: user.id)}
+
 
   private
 
