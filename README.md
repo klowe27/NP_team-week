@@ -8,6 +8,14 @@
 
 Charity Frog is a site where users can donate to various charities in the Portland, Oregon area. Charities are sorted by category to make it convenient for users to browse. Like an ecommerce site, users can create an account to track their order history.
 
+Here is a screenshot of the homepage:
+
+<img src="/app/assets/images/homepage.png" style="width: 700px">
+
+Here is a screenshot of the page where users can view all the nonprofits sorted by category:
+
+<img src="/app/assets/images/all_nonprofits.png" style="width: 700px">
+
 ## Setup/Installation Requirements
 
 * In the command line, clone this repository with $ git clone https://github.com/kmh620/NP_team-week
