@@ -1,7 +1,10 @@
 <h6>User Account Page</h6>
-
-<h3>Logged in as <strong><%= current_user.email %></strong></h3>
-
+<% if current_user.admin?%>
+  <h3>Logged in as Admin: <strong><%= current_user.email %></strong></h3>
+    <h3><%= link_to "Admin Data", orders_admin_path %></h3>
+<% else %>
+  <h3>Logged in as: <strong><%= current_user.email %></strong></h3>
+  <% end %>
 <hr>
 
 <h4>Thank you for your support! <br>
@@ -19,4 +22,11 @@
       <hr>
       <% end %>
   </ul>
+<% end %>
+
+
+<% if current_user.admin?%>
+
+
+
 <% end %>

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   get 'users/show'
+  get 'orders/admin' => 'orders#admin'
+  get 'orders/donations' => 'orders.donations'
   resources :nonprofits, only: [:index, :show]
   resources :orders, only: [:index, :show]
   resources :order_items
@@ -15,7 +17,7 @@ Rails.application.routes.draw do
    root to: "types#index"
 
    resources :users do
-    
+
    end
 
    resources :charges

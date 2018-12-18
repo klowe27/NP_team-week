@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @order_items = @order.order_items
+    @nonprofits = Nonprofit.all
     # @order_item = @order.order_items.new
   end
 
@@ -20,8 +21,15 @@ class OrdersController < ApplicationController
     redirect_to cart_path
   end
 
-  # def user_orders
-  #   @all_user_orders = Order.user_orders
+  def admin
+    @nonprofits = Nonprofit.all
+  end
+
+  # def donations
+  #   @order_items = Order_Items.all
+  #   @orders = Orders.all
+  #   @nonprofit = Nonprofit.find(params[:id])
+  #   (params[:nonprofit_id])
   # end
 
 end
