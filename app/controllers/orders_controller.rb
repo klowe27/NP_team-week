@@ -9,6 +9,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @order.update(user_id: current_user.id)
     respond_to do |format|
       format.html
       format.json
@@ -18,7 +19,9 @@ class OrdersController < ApplicationController
           type: "application/pdf",
           disposition: :inline
       }
-      session.delete(:order_id)
+      if current_order.id === @order.id
+        session.delete(:order_id)
+      end
     end
 
     @order_items = @order.order_items

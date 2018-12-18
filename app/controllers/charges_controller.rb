@@ -6,12 +6,13 @@ class ChargesController < ApplicationController
   end
 
   def new
+      # redirect_to order_path(@order)
       @order_items = current_order.order_items
-      redirect_to
   end
 
   def create
     # Amount in cents
+    @order = current_order
     @amount = current_order.calculate_total_cent
 
     customer = Stripe::Customer.create(
@@ -36,28 +37,13 @@ class ChargesController < ApplicationController
       card_exp_year: card.exp_year
     )
 
+    redirect_to order_path(@order)
 
+      rescue Stripe::CardError => e
+        flash[:error] = e.message
+        # redirect_to order_path(@order)
 
-    rescue Stripe::CardError => e
-      flash[:error] = e.message
-      redirect_to new_charge_path
-  end
-
-
-  def show
-      binding.pry
-    respond_to do |format|
-      format.pdf {
-        send_data @charge.receipt.render,
-          filename: "#{@charge.created_at.strftime("%Y-%m-%d")}-gorails-receipt.pdf",
-          type: "application/pdf",
-          disposition: :inline
-      }
-
-        session.delete(:order_id)
     end
-
-  end
 
   private
 

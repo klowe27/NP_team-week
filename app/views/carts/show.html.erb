@@ -1,4 +1,6 @@
 <h1>Your Cart</h1>
+<%= link_to "Keep shopping", types_path, :class => "btn btn-primary" %>
+
 <% if @order_items.any? %>
   <% @order_items.each do |item| %>
   <div class="type" style="margin-top: 15px;">
@@ -11,31 +13,28 @@
   <h2 style="text-align:center; margin-top: 10px;">Your Total: <%= number_to_currency current_order.calculate_total %></h2>
 
   <div class="center">
-    <%= link_to "Keep shopping", types_path, :class => "btn btn-primary" %>
-    <%= link_to "Checkout", cart_path, :class => "btn btn-primary" %>
 
+  <%= form_tag charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <!-- <label class="amount">
+        <span>Amount: <%= number_to_currency current_order.calculate_total %></span>
+      </label> -->
+    </article>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="Payment details"
+            data-amount="<%= number_to_currency current_order.calculate_total_cent %>"
+            data-locale="auto"></script>
+  <% end %>
   </div>
-
 <% else %>
   <p>Your shopping cart is empty.</p>
 <% end %>
 
 <!-- FIX THIS -->
-<%= form_tag order_path(@order) do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Amount: <%= number_to_currency current_order.calculate_total %></span>
-    </label>
-  </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="<%= number_to_currency current_order.calculate_total_cent %>"
-          data-locale="auto"></script>
-<% end %>

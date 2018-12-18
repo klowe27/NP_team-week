@@ -25,10 +25,14 @@ def receipt
       line_items: [
         ["Date",           created_at.strftime("%Y-%m-%d")],
         ["Account Billed", "#{user.email}"],
-        ["Product",        "CHARITY NAME PLACEHOLDER"],
+        ["Product",        "#{self.order_items.collect  { |item| item.nonprofit.name}.join("\n")}"],
         ["Amount",         "$#{self.order_items.collect { |item| item.amount }.sum}.00"],
         ["Charged to",     "#{card_type} (**** **** **** #{card_last4})"],
       ],
+      font: {
+        bold: Rails.root.join('app/assets/fonts/thasadith/Thasadith-Bold.ttf'),
+        normal: Rails.root.join('app/assets/fonts/thasadith/Thasadith-Regular.ttf'),
+      }
     )
   end
 

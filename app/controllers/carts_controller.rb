@@ -16,6 +16,7 @@ class CartsController < ApplicationController
 
 
   def create
+  
   # Amount in cents
   @amount = current_order.calculate_total_cent
 
@@ -29,6 +30,16 @@ class CartsController < ApplicationController
     :amount      => @amount,
     :description => 'Rails Stripe customer',
     :currency    => 'usd'
+  )
+
+  card = customer.sources.retrieve(charge.source.id)
+  current_order.update(
+    status: "Complete",
+    stripe_id: card.id,
+    card_last4: card.last4,
+    card_type: card.brand,
+    card_exp_month: card.exp_month,
+    card_exp_year: card.exp_year
   )
 
   rescue Stripe::CardError => e
