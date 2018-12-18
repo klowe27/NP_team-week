@@ -4,7 +4,8 @@ class OrdersController < ApplicationController
   def index
     @order = current_order
     #doublecheck
-    @orders = Order.where(user_id: current_user.id)
+    @orders = Order.where(["user_id = ? and status = ?", current_user.id, "Complete"])
+#
   end
 
   def show

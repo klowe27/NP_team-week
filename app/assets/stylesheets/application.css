@@ -220,3 +220,5 @@ h4 {
 .order-link{
   color: blue;
 }
+
+.stripe-button-el span { display: none }
