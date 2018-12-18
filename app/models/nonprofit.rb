@@ -7,14 +7,6 @@ class Nonprofit < ActiveRecord::Base
 
   scope :search, -> (name_parameter) { where("name like ?", "%#{name_parameter}%")}
 
-  def self.search(search)
-
-  if search
-    find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
-  else
-    "none"
-  end
-end
 
 
 end

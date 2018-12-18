@@ -1,14 +1,6 @@
 class NonprofitsController < ApplicationController
   def index
-    @nonprofits =Nonprofits.search(params[:search])
-
     @types = Type.all
-    @nonprofit = Nonprofit.all
-    # if params[:search]
-    #   @nonprofit = Nonprofit.search(params[:search]).order("created_at DESC")
-    # else
-    #   @nonprofit = Nonprofit.all.order("created_at DESC")
-     # end
   end
 
   def show

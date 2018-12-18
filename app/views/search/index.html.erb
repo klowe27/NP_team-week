@@ -1,0 +1,14 @@
+<h1>Search Results</h1>
+
+
+
+
+<% if search.any? %>
+  <ul>
+  <% @search.each do |nonprofit| %>
+    <h2><%= link_to nonprofit.name, type_nonprofit_path(type, nonprofit) %></h2>
+  </ul>
+  <%else%>
+    <p>No Results Found</p>
+  <%end%>
+  <% end %>

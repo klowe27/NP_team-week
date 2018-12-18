@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
    resources :users
    resources :charges
+   resources :search
 
+  # get '/search' => 'search#index', :as => 'search'
 
 end
