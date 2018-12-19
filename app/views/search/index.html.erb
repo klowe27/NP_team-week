@@ -1,9 +1,12 @@
 <h1>Search Results</h1>
-<!-- 
 
-<form action="/search" method="get">
-  <p>
-    <input type="text" name="search" id="search"/>
-    <input type="submit" name="commit" value="Search"/>
-  </p>
-</form> -->
+<% if @search %>
+
+  <ul>
+  <% @search.each do |search| %>
+    <li>  <%= search.name %></li>
+  <%end%>
+    </ul>
+<%else%>
+  <p>No Results</p>
+<%end%>

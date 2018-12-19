@@ -14,10 +14,12 @@ class Nonprofit < ActiveRecord::Base
     end
   end
 
+scope :search, -> (name_parameter) { where("name like ?", "%i#{name_parameter}%")}
+
 private
 
   def nonprofit_params
-    params.require(:search).permit(:nonprofit, :nonprofit.name)
+    params.require(:search)
   end
 
 
