@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   #dont know why it requires the default format here.
   resources :orders
   resources :order_items
+  resources :favorites
 
   resources :types do
     resources :nonprofits, only: [:index, :show]
