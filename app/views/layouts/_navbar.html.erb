@@ -11,16 +11,7 @@
       <% else %>
       <li class="nav-item"><%= link_to "Sign In", user_session_path, :class => "nav-link"  %></li>
       <% end %>
-
-
-      <%= form_tag search_path, :method => 'get' do %>
-        <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag 'Search', :name => nil %>
-      <% end %>
-
-
-
-
+      
     </ul>
   </div>
   <a href="/cart" class="float-right"><%= image_tag ("cart.png"), :class => 'cart' %><span class="badge badge-pill badge-secondary"><%= current_order.order_items.length %></span></a>

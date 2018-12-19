@@ -8,8 +8,4 @@ class NonprofitsController < ApplicationController
     @order_item = current_order.order_items.new
   end
 
-  # def self.search(name_parameter)
-  #   where("name like ?", "%#{name_parameter}%")
-  # end
-
 end

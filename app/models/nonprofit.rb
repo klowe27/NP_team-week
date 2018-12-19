@@ -5,8 +5,6 @@ class Nonprofit < ActiveRecord::Base
   validates :name, :presence => true
   validates :info, :presence => true
 
-  scope :search, -> (name_parameter) { where("name like ?", "%#{name_parameter}%")}
-
-
+  # scope :name, -> (name_parameter) { where("name like ?", "%#{name_parameter}%") }
 
 end

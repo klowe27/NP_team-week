@@ -3,7 +3,7 @@
 
 
 
-<% if search.any? %>
+<% if @nonprofit.search.any? %>
   <ul>
   <% @search.each do |nonprofit| %>
     <h2><%= link_to nonprofit.name, type_nonprofit_path(type, nonprofit) %></h2>
