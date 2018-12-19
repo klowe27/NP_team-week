@@ -9,4 +9,9 @@ class ApplicationController < ActionController::Base
       Order.new
     end
   end
+
+    private
+    def admin_user
+      redirect_to root_path, alert: 'Access Denied, Admin Only!' unless current_user && current_user.admin?
+    end
 end

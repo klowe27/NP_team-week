@@ -1,5 +1,5 @@
 class DonationsController < ApplicationController
-
+  before_action :admin_user
 
   def index
     @nonprofits = Nonprofit.all

@@ -1,7 +1,7 @@
-<h6>User Account Page</h6>
+<h6>User Account</h6>
 <% if current_user.admin?%>
+<h5><%= link_to "View All Donation Records", orders_admin_path %></h5>
   <h3>Logged in as Admin: <strong><%= current_user.email %></strong></h3>
-    <h5><%= link_to "View Donation Records", orders_admin_path %></h5>
 <% else %>
   <h3>Logged in as: <strong><%= current_user.email %></strong></h3>
   <% end %>

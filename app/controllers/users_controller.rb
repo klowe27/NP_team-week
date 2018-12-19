@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :admin_user
+
   def index
     @users = User.all
   end
@@ -19,6 +21,6 @@ class UsersController < ApplicationController
     else
       render :registrations_new
     end
+  end
 
-end
 end
