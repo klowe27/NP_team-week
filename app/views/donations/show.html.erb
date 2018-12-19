@@ -2,8 +2,6 @@
 
 <% if @orders.any? %>
   <% @orders.where(status: "Complete").each do |order| %>
-
-
       <% order.order_items.each do |order_item| %>
         <% if order_item.nonprofit.id == @nonprofit.id %>
         <div class="order-history-admin">
@@ -14,8 +12,6 @@
         </div>
         <% end %>
       <% end %>
-
-
   <% end %>
 
 <% else %>
