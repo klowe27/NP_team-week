@@ -1,6 +1,8 @@
 Nonprofit.destroy_all
 Type.destroy_all
 OrderItem.destroy_all
+Favorite.destroy_all
+Order.destroy_all
 
 
 types = ["Arts & Culture", "Sports & Recreation", "Human & Civil Rights", "Animals", "Environmental", "Health"]
