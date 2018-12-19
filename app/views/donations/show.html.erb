@@ -1,20 +1,21 @@
 <h1>All donations for <%= @nonprofit.name %></h1>
 
 <% if @orders.any? %>
-  <% @orders.each do |order| %>
-  <div class="order-history-admin">
-    <% if order.status =="Complete" %>
+  <% @orders.where(status: "Complete").each do |order| %>
+
 
       <% order.order_items.each do |order_item| %>
         <% if order_item.nonprofit.id == @nonprofit.id %>
+        <div class="order-history-admin">
           <p><strong>Order:</strong> #<%= order.id%><br>
           <strong>Item:</strong> #<%= order_item.id%><br>
           <strong>Amount:</strong> $<%= order_item.amount%><br>
           <strong>User:</strong> <%= link_to order.user.email, user_path(order.user.id) %></p>
+        </div>
         <% end %>
       <% end %>
-    <% end %>
-  </div>
+
+
   <% end %>
 
 <% else %>
