@@ -45,13 +45,8 @@ class OrdersController < ApplicationController
   end
 
   def donations
-    # @order_items = OrderItem.all
     @nonprofit = Nonprofit.find(params[:id])
     @nonprofits = Nonprofit.all
-    # @order_items = OrderItem.where(nonprofit_id: @nonprofit.id )
-    # @orders = Order.all
-    # @order = Order.where(id: @order_item.order_id)
-    # (params[:nonprofit_id])
   end
 
 end

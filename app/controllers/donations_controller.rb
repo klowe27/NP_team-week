@@ -3,8 +3,6 @@ class DonationsController < ApplicationController
 
   def index
     @nonprofits = Nonprofit.all
-    # @nonprofit = Nonprofit.find(params[:id])
-
   end
 
   def show

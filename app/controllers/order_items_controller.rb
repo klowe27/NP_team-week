@@ -14,7 +14,7 @@ class OrderItemsController < ApplicationController
    @item.destroy
    @order.save
    redirect_to cart_path
- end
+  end
 
   private
 
