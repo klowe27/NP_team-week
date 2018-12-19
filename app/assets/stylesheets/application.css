@@ -52,6 +52,13 @@
    text-align: center;
 }
 
+.order-history {
+  background-color: #5F9F9F;
+  color: white;
+  padding: 30px;
+  margin-top: 20px;
+}
+
 .navbar-brand {
   font-weight: bolder;
 }
@@ -220,7 +227,20 @@ h4 {
 }
 
 .order-link{
-  color: blue;
+  color: black;
 }
 
-.stripe-button-el span { display: none }
+.favorite {
+  width: 25px;
+  display: inline;
+}
+
+.btn-default {
+  background-color: white;
+  border:none;
+}
+
+.btn-default:hover {
+  background-color: gray;
+  color: white;
+}

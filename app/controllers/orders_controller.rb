@@ -5,7 +5,6 @@ class OrdersController < ApplicationController
     @order = current_order
     #doublecheck
     @orders = Order.where(["user_id = ? and status = ?", current_user.id, "Complete"])
-#
   end
 
   def show

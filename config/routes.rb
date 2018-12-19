@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :donations
   resources :orders
   resources :order_items
+  resources :favorites
 
   resources :types do
     resources :nonprofits, only: [:index, :show]
