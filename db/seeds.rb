@@ -2,7 +2,7 @@ Nonprofit.destroy_all
 Type.destroy_all
 OrderItem.destroy_all
 
-types = ["Arts & Culture", "Sports & Recreation", "Human & Civil Rights", "Animals"]
+types = ["Arts & Culture", "Sports & Recreation", "Human & Civil Rights", "Animals", "Environmental", "Health"]
 paragraph = "Established in 1945, the Urban League of Portland is one of the oldest African American service, civil rights and advocacy organizations in the area. We are part of a network of over 90 National Urban League Affiliates across the country and are recognized as one of the leading voices for African Americans and other people of color in the region. We are a key coalition-builder amongst other African American organizations, and work extensively with both traditional and emerging African American groups, the faith-based community, minority businesses, and other organizations of color, including immigrants and refugees. The Urban League of Portland’s mission is to empower African Americans and others to achieve equality in education, employment, health, economic security and quality of life."
 
 types.each_with_index do |type, index|
