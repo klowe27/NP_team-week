@@ -26,12 +26,8 @@ class OrdersController < ApplicationController
     end
 
     @order_items = @order.order_items
-<<<<<<< HEAD
     @nonprofits = Nonprofit.all
     # @order_item = @order.order_items.new
-=======
-
->>>>>>> master
   end
 
   def create
@@ -43,19 +39,19 @@ class OrdersController < ApplicationController
     # redirect_to cart_path
   end
 
-<<<<<<< HEAD
   def admin
     @nonprofits = Nonprofit.all
+
   end
 
-  # def donations
-  #   @order_items = Order_Items.all
-  #   @orders = Orders.all
-  #   @nonprofit = Nonprofit.find(params[:id])
-  #   (params[:nonprofit_id])
-  # end
-=======
-
->>>>>>> master
+  def donations
+    # @order_items = OrderItem.all
+    @nonprofit = Nonprofit.find(params[:id])
+    @nonprofits = Nonprofit.all
+    # @order_items = OrderItem.where(nonprofit_id: @nonprofit.id )
+    # @orders = Order.all
+    # @order = Order.where(id: @order_item.order_id)
+    # (params[:nonprofit_id])
+  end
 
 end
