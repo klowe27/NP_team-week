@@ -2,12 +2,15 @@ Nonprofit.destroy_all
 Type.destroy_all
 OrderItem.destroy_all
 
+
 types = ["Arts & Culture", "Sports & Recreation", "Human & Civil Rights", "Animals", "Environmental", "Health"]
 paragraph = "Established in 1945, the Urban League of Portland is one of the oldest African American service, civil rights and advocacy organizations in the area. We are part of a network of over 90 National Urban League Affiliates across the country and are recognized as one of the leading voices for African Americans and other people of color in the region. We are a key coalition-builder amongst other African American organizations, and work extensively with both traditional and emerging African American groups, the faith-based community, minority businesses, and other organizations of color, including immigrants and refugees. The Urban League of Portland’s mission is to empower African Americans and others to achieve equality in education, employment, health, economic security and quality of life."
 
 types.each_with_index do |type, index|
   Type.create!(name: type, image: "icon#{index}.png")
 end
+
+Nonprofit.store
 
 Nonprofit.create!(name: "The Portland Art Museum", info: "The mission of the Portland Art Museum is to engage diverse communities through art and film of enduring quality, and to collect, preserve, and educate for the enrichment of present and future generations. Founded in late 1892, the Portland Art Museum is the seventh oldest museum in the United States and the oldest in the Pacific Northwest. The Museum is internationally recognized for its permanent collection and ambitious special exhibitions, drawn from the Museum’s holdings and the world’s finest public and private collections.
 
