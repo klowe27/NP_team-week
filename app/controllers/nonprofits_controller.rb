@@ -12,4 +12,5 @@ class NonprofitsController < ApplicationController
       @favorite = []
     end
   end
+
 end

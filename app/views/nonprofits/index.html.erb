@@ -1,8 +1,13 @@
 <h1>All Nonprofits</h1>
+
+<%= form_tag nonprofits_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag 'Search', :name => nil %>
+<% end %>
+
 <% @types.each do |type| %>
 <h2><%= type.name %></h2>
 <div class="all-nonprofits">
-
  <% type.nonprofits.each do |nonprofit| %>
    <div class="type">
   <%= image_tag ("#{nonprofit.image}"), :class => "nonprofit-image-thumbnail" %>
