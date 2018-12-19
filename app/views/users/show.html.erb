@@ -5,11 +5,18 @@
 <% if @orders.any?%>
   <% @orders.each do |order| %>
     <h4>Order#: <%= order.id %></h4>
-    <p>Order Total: $<%= order.total %></p>
+    <ul>
+
+
+    <li>Total Donation: $<%= order.total %></li>
     <% order.order_items.each do |order_item| %>
-      <p>Nonprofit: <%= order_item.nonprofit.name %></p>
-      <p>amount: $<%= order_item.amount %></p>
+      <li><strong><%= order_item.nonprofit.name %></strong></li>
+      <ul>
+
+      <li>Donation: $<%= order_item.amount %></li>
+    </ul>
     <% end %>
+      </ul>
   <% end %>
   <hr>
 <% end %>
