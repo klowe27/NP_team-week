@@ -1,12 +1,11 @@
-<h2>Click a nonprofit for donation history:</h2>
+<h1>Click a nonprofit for donation history</h1>
 
 <% if @nonprofits %>
-
-  <!-- <p>All nonprofits:</p> -->
-
   <ul>
     <% @nonprofits.each do |nonprofit| %>
       <li><%= link_to nonprofit.name, donation_path(nonprofit.id) %></li>
     <% end %>
   </ul>
 <% end %>
+
+<p><%= link_to "Back", orders_path %></p>

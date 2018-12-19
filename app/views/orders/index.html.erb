@@ -1,7 +1,7 @@
 <h1>User Account</h1>
 <% if current_user.admin?%>
-<p><%= link_to "View All Donation Records", orders_admin_path %></p>
   <p>Logged in as Admin: <strong><%= current_user.email %></strong></p>
+  <%= link_to "Admin portal", orders_admin_path, :class => "btn btn-primary" %>
 <% else %>
   <p>Logged in as: <strong><%= current_user.email %></strong></p>
   <% end %>

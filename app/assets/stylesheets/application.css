@@ -59,6 +59,12 @@
   margin-top: 20px;
 }
 
+.order-history-admin {
+  background-color: #F8F8F8;
+  padding: 30px;
+  margin-top: 20px;
+}
+
 .navbar-brand {
   font-weight: bolder;
 }

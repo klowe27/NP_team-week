@@ -1,4 +1,4 @@
-<h2 style="margin-bottom:50px">Order Details</h2>
+<h1 style="margin-bottom:50px">Order Details</h1>
 
 <p><strong>Order:</strong> #<%= @order.id %> </p>
 <p><strong>Total:</strong> <%= number_to_currency @order.total  %></p>
@@ -14,4 +14,6 @@
   <p>Donation Amount: <%= number_to_currency item.amount %></p>
   <hr>
 <% end %>
-<a href="<%= @order.id %>.pdf">View PDF</a>
+<a href="<%= @order.id %>.pdf"><button class="btn btn-primary">View PDF</button></a>
+
+<p><%= link_to "Back", :back %></p>
