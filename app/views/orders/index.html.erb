@@ -4,8 +4,8 @@
 <hr>
 <h2 class="type">Thank you for your support! </h2>
 
+<h2>Your Contributions</h2>
 <% if @orders %>
-  <h2>Your Contributions</h2>
   <div class="order-history">
   <% @orders.each do |order| %>
     <p><strong>Order Id:</strong> <%= order.id %> <br>
@@ -20,8 +20,8 @@
 <p>You haven't made any contributions.</p>
 <% end %>
 
-<% if current_user.favorites %>
-  <h2 id="favorites">Your Favorites</h2>
+<h2 id="favorites">Your Favorites</h2>
+<% if current_user.favorites.length > 0 %>
   <% current_user.favorites.each do |favorite| %>
     <div class="type" style="margin-top: 15px;">
     <h2><%= link_to favorite.nonprofit.name, nonprofit_path(favorite.nonprofit) %></h2>

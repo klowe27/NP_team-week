@@ -8,11 +8,6 @@
       <% if current_user.favorites.exists?(:nonprofit_id => @nonprofit.id) %>
          <a href="/orders#favorites"><%= image_tag ("heart_full.png"), :class => "favorite"%></a><br>
 
-         <%= form_for favorites_path, :method => "delete" do |f| %>
-            <%= f.hidden_field :nonprofit_id, value: @nonprofit.id %>
-            <%= f.submit " ", :type => "image", :src => asset_path("heart_full.png"), :class => "favorite" %>
-        <% end %>
-
       <% else %>
        <%= form_for @favorite do |f| %>
           <%= f.hidden_field :nonprofit_id, value: @nonprofit.id %>
