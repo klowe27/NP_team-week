@@ -1,6 +1,8 @@
 class SearchController < ApplicationController
   def index
-    @nonprofits = Nonprofit.search(params[:search])
+    if params[:search]
+    @nonprofit = Nonprofit.where('name LIKE ?', "%#{search}%" )
+    end
   end
 
 end

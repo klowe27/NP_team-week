@@ -14,4 +14,11 @@ class Nonprofit < ActiveRecord::Base
     end
   end
 
+private
+
+  def nonprofit_params
+    params.require(:search).permit(:nonprofit, :nonprofit.name)
+  end
+
+
 end
