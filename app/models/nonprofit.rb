@@ -26,7 +26,7 @@ class Nonprofit < ActiveRecord::Base
     options = {
       query: {
         app_id: '2b1ffdad',
-        app_key: '8eda9895e97dc7117eb0a465170d1b7b',
+        app_key: ENV['CN_APP_KEY'],
         rated: 'true',
         categoryID: '5'
       }
