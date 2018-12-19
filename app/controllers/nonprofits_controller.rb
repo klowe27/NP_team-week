@@ -1,6 +1,7 @@
 class NonprofitsController < ApplicationController
   def index
     @types = Type.all
+    @nonprofitss = Nonprofit.search(params[:search])
   end
 
   def show

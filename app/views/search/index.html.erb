@@ -1,14 +1,9 @@
 <h1>Search Results</h1>
+<!-- 
 
-
-
-
-<% if @nonprofit.search.any? %>
-  <ul>
-  <% @search.each do |nonprofit| %>
-    <h2><%= link_to nonprofit.name, type_nonprofit_path(type, nonprofit) %></h2>
-  </ul>
-  <%else%>
-    <p>No Results Found</p>
-  <%end%>
-  <% end %>
+<form action="/search" method="get">
+  <p>
+    <input type="text" name="search" id="search"/>
+    <input type="submit" name="commit" value="Search"/>
+  </p>
+</form> -->
