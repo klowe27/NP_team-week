@@ -1,0 +1,15 @@
+
+
+<p>User: <%= @user.email %></p>
+<hr>
+<% if @orders.any?%>
+  <% @orders.each do |order| %>
+    <h4>Order#: <%= order.id %></h4>
+    <p>Order Total: $<%= order.total %></p>
+    <% order.order_items.each do |order_item| %>
+      <p>Nonprofit: <%= order_item.nonprofit.name %></p>
+      <p>amount: $<%= order_item.amount %></p>
+    <% end %>
+  <% end %>
+  <hr>
+<% end %>

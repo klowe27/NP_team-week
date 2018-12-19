@@ -1,17 +1,18 @@
 <h3>All donations for <%= @nonprofit.name %></h3>
 
-<% if @order_items %>
-
-
-  <ul>
-    <% @order_items.each do |order_item| %>
-      <li>Order Item ID: <%= order_item.id %></li>
-      <ul>
-        <li>Date: <%= order_item.created_at.strftime("%Y-%m-%d") %></li>
-        <li>Order ID: <%= order_item.order_id %></li>
-        <li>Amount: $ <%= order_item.amount %></li>
-    </ul>
-
+<% if @orders.any? %>
+  <% @orders.each do |order| %>
+    <% if order.status =="Complete" %>
+      <% order.order_items.each do |order_item| %>
+        <% if order_item.nonprofit.id == @nonprofit.id %>
+          <p>Order#: <%= order.id%></p>
+          <p>Item#: <%= order_item.id%></p>
+          <p>Amount: $<%= order_item.amount%></p>
+          <p>User: <%= link_to order.user.email, user_path(order.user.id) %></p>
+        <% end %>
+      <% end %>
     <% end %>
-  </ul>
+  <% end %>
+<% else %>
+<p>Looks like there are no orders.</p>
 <% end %>

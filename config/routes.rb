@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
 
-  get 'users/show'
   get 'orders/admin' => 'orders#admin'
   get 'orders/donations' => 'orders#donations'
   resources :nonprofits, only: [:index, :show] do
