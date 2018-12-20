@@ -28,7 +28,7 @@ Here is a screenshot of the page where users can view all the nonprofits sorted 
 
 ## Setup/Installation Requirements
 
-* View directly here:
+* View directly here: https://charity-frog.herokuapp.com/
 * In the command line, clone this repository with $ git clone https://github.com/kmh620/NP_team-week
 * Navigate into the directory and in the command line install dependent gems by using command $ bundle install (if you don't already have the bundler gem installed, first run $ gem install bundler)
 * To create the necessary database, use the following commands in the command line while in the root directory:
