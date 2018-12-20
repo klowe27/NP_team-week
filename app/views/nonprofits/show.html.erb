@@ -7,30 +7,26 @@
     <% if current_user %>
       <% if current_user.favorites.exists?(:nonprofit_id => @nonprofit.id) %>
          <a href="/orders#favorites"><%= image_tag ("heart_full.png"), :class => "favorite"%></a><br>
-
       <% else %>
-       <%= form_for @favorite do |f| %>
+        <%= form_for @favorite do |f| %>
           <%= f.hidden_field :nonprofit_id, value: @nonprofit.id %>
           <%= f.submit " ", :type => "image", :src => asset_path("heart_empty.png"), :class => "favorite" %>
       <% end %>
-
      <% end %>
-     <% end %>
+   <% end %>
 
-
-     <a href="<%= @nonprofit.website %>" target="blank"><%= @nonprofit.website %></a>
-
-    <p class="class"><%= @nonprofit.info %></p>
+   <a href="<%= @nonprofit.website %>" target="blank"><%= @nonprofit.website %></a>
+   <p class="class"><%= @nonprofit.info %></p>
   </div>
   <div class="col-md-4">
     <div class="donate">
       <h4>Donate</h4>
       <p>Enter an amount</p>
         <%= form_for @order_item do |f| %>
-           <%= f.hidden_field :nonprofit_id, value: @nonprofit.id %>
-           <%= f.number_field :amount, :class => "form-control"%> <br>
-           <%= f.submit "Add to cart", :class => "btn btn-primary add-to-cart" %>
-       </div>
+          <%= f.hidden_field :nonprofit_id, value: @nonprofit.id %>
+          <%= f.number_field :amount, :class => "form-control", :required => true %> <br>
+          <%= f.submit "Add to cart", :class => "btn btn-primary add-to-cart" %>
      </div>
-   <% end %>
+   </div>
+ <% end %>
 </div>

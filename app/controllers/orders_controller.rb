@@ -3,7 +3,6 @@ class OrdersController < ApplicationController
 
   def index
     @order = current_order
-    #doublecheck
     @orders = Order.where(["user_id = ? and status = ?", current_user.id, "Complete"])
   end
 
@@ -26,16 +25,6 @@ class OrdersController < ApplicationController
 
     @order_items = @order.order_items
     @nonprofits = Nonprofit.all
-    # @order_item = @order.order_items.new
-  end
-
-  def create
-    # @order = current_order
-    # session[:order_id] = @order.id
-    # session[:user_id] = @user.id
-    # @user = current_user
-    # @order.user_id = @user.id
-    # redirect_to cart_path
   end
 
   def admin

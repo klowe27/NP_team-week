@@ -4,18 +4,18 @@
   <% @orders.where(status: "Complete").each do |order| %>
       <% order.order_items.each do |order_item| %>
         <% if order_item.nonprofit.id == @nonprofit.id %>
-        <div class="order-history-admin">
-          <p><strong>Order:</strong> #<%= order.id%><br>
-          <strong>Item:</strong> #<%= order_item.id%><br>
-          <strong>Amount:</strong> $<%= order_item.amount%><br>
-          <strong>User:</strong> <%= link_to order.user.email, user_path(order.user.id) %></p>
-        </div>
+          <div class="order-history-admin">
+            <p><strong>Order:</strong> #<%= order.id%><br>
+            <strong>Item:</strong> #<%= order_item.id%><br>
+            <strong>Amount:</strong> $<%= order_item.amount%><br>
+            <strong>User:</strong> <%= link_to order.user.email, user_path(order.user.id) %></p>
+          </div>
         <% end %>
       <% end %>
   <% end %>
 
 <% else %>
-<p>Looks like there are no orders.</p>
+  <p>Looks like there are no orders.</p>
 <% end %>
 
 <p><%= link_to "Back", orders_admin_path %></p>

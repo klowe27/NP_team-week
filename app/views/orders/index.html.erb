@@ -4,24 +4,25 @@
   <%= link_to "Admin portal", orders_admin_path, :class => "btn btn-primary" %>
 <% else %>
   <p>Logged in as: <strong><%= current_user.email %></strong></p>
-  <% end %>
+<% end %>
+
 <hr>
 <h2 class="type">Thank you for your support! </h2>
 
 <h2>Your Contributions</h2>
 <% if @orders %>
   <div class="order-history">
-  <% @orders.each do |order| %>
-    <p><strong>Order Id:</strong> <%= order.id %> <br>
-    <strong>Total Donation:</strong> <%= number_to_currency order.total %><br>
-    <strong>Order Date:</strong> <%= order.created_at.strftime("%Y-%m-%d") %><br>
-    <strong>Payment: </strong><%= order.card_type %> (**** **** **** <%= order.card_last4 %>)</p>
-    <%= link_to "View details", order_path(order.id), :class => "btn btn-default" %>
-    <hr>
-  <% end %>
-</div>
+    <% @orders.each do |order| %>
+      <p><strong>Order Id:</strong> <%= order.id %> <br>
+      <strong>Total Donation:</strong> <%= number_to_currency order.total %><br>
+      <strong>Order Date:</strong> <%= order.created_at.strftime("%Y-%m-%d") %><br>
+      <strong>Payment: </strong><%= order.card_type %> (**** **** **** <%= order.card_last4 %>)</p>
+      <%= link_to "View details", order_path(order.id), :class => "btn btn-default" %>
+      <hr>
+    <% end %>
+  </div>
 <% else %>
-<p>You haven't made any contributions.</p>
+  <p>You haven't made any contributions.</p>
 <% end %>
 
 
@@ -30,11 +31,10 @@
 <% if current_user.favorites.length > 0 %>
   <% current_user.favorites.each do |favorite| %>
     <div class="type" style="margin-top: 15px;">
-    <h2><%= link_to favorite.nonprofit.name, nonprofit_path(favorite.nonprofit) %></h2>
-    <p><%= link_to "Delete", favorite_path(favorite), :method => "delete" %>
+      <h2><%= link_to favorite.nonprofit.name, nonprofit_path(favorite.nonprofit) %></h2>
+      <p><%= link_to "Delete", favorite_path(favorite), :method => "delete" %>
     </div>
   <% end %>
 <% else %>
-<p>You haven't favorited any charities.</p>
-
+  <p>You haven't favorited any charities.</p>
 <% end %>

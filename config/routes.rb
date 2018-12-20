@@ -1,12 +1,7 @@
 Rails.application.routes.draw do
-
-
   get 'orders/admin' => 'orders#admin'
   get 'orders/donations' => 'orders#donations'
-  resources :nonprofits, only: [:index, :show] do
-      # get 'orders/donation' => 'orders#donation'
-    end
-  #dont know why it requires the default format here.
+  resources :nonprofits, only: [:index, :show]
   resources :donations
   resources :orders
   resources :order_items
@@ -21,8 +16,7 @@ Rails.application.routes.draw do
   devise_for :users
    root to: "types#index"
 
-   resources :users
-   resources :charges
-
+  resources :users
+  resources :charges
 
 end

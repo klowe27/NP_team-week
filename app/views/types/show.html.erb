@@ -1,18 +1,14 @@
 <h1><%= @type.name %></h1>
 
 <div class="all-nonprofits">
-
-<% if @type.nonprofits.any? %>
-  <% @type.nonprofits.each do |nonprofit| %>
-    <div class="type">
-      <%= image_tag ("#{nonprofit.image}"), :class => "nonprofit-image-thumbnail" %>
-      <h2><%= link_to nonprofit.name, type_nonprofit_path(@type, nonprofit) %>
-      </h2>
-    </div>
-  <% end %>
+  <% if @type.nonprofits.any? %>
+    <% @type.nonprofits.each do |nonprofit| %>
+      <div class="type">
+        <%= image_tag ("#{nonprofit.image}"), :class => "nonprofit-image-thumbnail" %>
+        <h2><%= link_to nonprofit.name, type_nonprofit_path(@type, nonprofit) %></h2>
+      </div>
+    <% end %>
   <% else %>
-
-  <p>This type is empty</p>
-<% end %>
-
+    <p>This type is empty</p>
+  <% end %>
 </div>

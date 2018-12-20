@@ -2,7 +2,6 @@
 <% if @order_items.any? %>
   <% @order_items.each do |item| %>
   <div class="type" style="margin-top: 15px;">
-
     <h2><%= link_to item.nonprofit.name, nonprofit_path(item.nonprofit) %></h2>
     <p><%= link_to "Delete", order_item_path(item), :method => "delete" %> |
      Amount: <%= number_to_currency item.amount %></p>
@@ -22,15 +21,13 @@
       </article>
 
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" button_text="Buy Now"
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description="Payment details"
-              data-amount="<%= number_to_currency current_order.calculate_total_cent %>"
-              data-locale="auto">
-            </script>
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-description="Payment details"
+        data-amount="<%= number_to_currency current_order.calculate_total_cent %>"
+        data-locale="auto">
+      </script>
     <% end %>
-    </div>
-  <% else %>
-    <p>Your shopping cart is empty.</p>
+  </div>
+<% else %>
+  <p>Your shopping cart is empty.</p>
 <% end %>
-
-<!-- FIX THIS -->

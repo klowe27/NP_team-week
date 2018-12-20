@@ -3,7 +3,6 @@
 
 <% if @orders.any?%>
   <% @orders.each do |order| %>
-
     <div class="order-history-admin">
 
       <p><strong>Order:</strong> #<%= order.id %><br>
@@ -15,9 +14,8 @@
         <li><strong><%= order_item.nonprofit.name %></strong>: <%= number_to_currency order_item.amount %></li>
       <% end %>
       </ul>
-
+      
     </div>
-
   <% end %>
 <% end %>
 

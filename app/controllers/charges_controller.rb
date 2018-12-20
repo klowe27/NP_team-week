@@ -6,7 +6,6 @@ class ChargesController < ApplicationController
   end
 
   def new
-      # redirect_to order_path(@order)
       @order_items = current_order.order_items
   end
 
@@ -41,7 +40,6 @@ class ChargesController < ApplicationController
 
       rescue Stripe::CardError => e
         flash[:error] = e.message
-        # redirect_to order_path(@order)
 
     end
 

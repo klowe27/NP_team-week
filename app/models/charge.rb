@@ -1,5 +1,5 @@
 class Charge < ActiveRecord::Base
-  belongs_to :user, optional: true 
+  belongs_to :user, optional: true
 
   def receipt
     Receipts::Receipt.new(
@@ -20,8 +20,7 @@ class Charge < ActiveRecord::Base
        ["Charged to",     "#{card_type} (**** **** **** #{card_last4})"],
      ],
      font: {
-       # bold: Rails.root.join('app/assets/fonts/tradegothic/TradeGothic-Bold.ttf'),
-       # normal: Rails.root.join('app/assets/fonts/tradegothic/TradeGothic.ttf'),
+
      }
    )
   end

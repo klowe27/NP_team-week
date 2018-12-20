@@ -18,7 +18,6 @@ class Nonprofit < ActiveRecord::Base
         categoryID: '4'
       }
     }
-
     self.class.get("/Organizations/", options)
   end
 
@@ -31,7 +30,6 @@ class Nonprofit < ActiveRecord::Base
         categoryID: '5'
       }
     }
-
     self.class.get("/Organizations/", options)
   end
 

@@ -9,10 +9,10 @@ class Order < ApplicationRecord
   end
 
   def calculate_total_cent
-  self.order_items.collect { |item| item.amount }.sum * 100
-end
+    self.order_items.collect { |item| item.amount }.sum * 100
+  end
 
-def receipt
+  def receipt
     Receipts::Receipt.new(
       id: id,
       subheading: "RECEIPT FOR ORDER #%{id}",
@@ -36,8 +36,7 @@ def receipt
     )
   end
 
-scope :user_orders, -> { where(user_id: user.id)}
-
+  scope :user_orders, -> { where(user_id: user.id)}
 
   private
 

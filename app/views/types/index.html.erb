@@ -6,9 +6,9 @@
 
 <div class="all-types">
   <% @types.each do |type| %>
-  <div class="type">
-    <%= image_tag ("#{type.image}"), :class => 'type-icon'%>
-    <h2> <%= link_to type.name, type_path(type) %></h2>
-  </div>
+    <div class="type">
+      <%= image_tag ("#{type.image}"), :class => 'type-icon'%>
+      <h2> <%= link_to type.name, type_path(type) %></h2>
+    </div>  
   <% end %>
 </div>
